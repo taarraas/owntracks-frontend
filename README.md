@@ -1,34 +1,40 @@
-# OwnTracks Frontend (unofficial fork with per-user colors)
+**This is an unofficial, temporary fork** of
+[owntracks/frontend](https://github.com/owntracks/frontend). It adds one thing: a
+[`map.colors`](docs/config.md#mapcolors) option to give each user or device its own color
+for tracks, points and the accuracy circle
+([owntracks/frontend#104](https://github.com/owntracks/frontend/issues/104)).
 
-> **This is an unofficial, temporary fork** of
-> [owntracks/frontend](https://github.com/owntracks/frontend). It adds one thing: a
-> [`map.colors`](docs/config.md#mapcolors) option to give each user or device its own
-> color for tracks, points and the accuracy circle
-> ([owntracks/frontend#104](https://github.com/owntracks/frontend/issues/104)).
->
-> Per-user colors are already implemented in the upcoming official v3
-> ([owntracks/frontend#170](https://github.com/owntracks/frontend/issues/170)). Once v3
-> is released, please switch back to the official image. This fork will not be
-> maintained beyond that, and it is not affiliated with or supported by the OwnTracks
-> project, so please don't report issues with it upstream.
->
-> **Usage:** use `ghcr.io/taarraas/owntracks-frontend:latest` instead of
-> `owntracks/frontend` (same environment variables and volumes), then add to your
-> `config.js`:
->
-> ```js
-> window.owntracks = window.owntracks || {};
-> window.owntracks.config = {
->   map: {
->     colors: {
->       alice: "#2a9d8f", // all of alice's devices
->       "bob/phone": "#e06c4f", // only bob's phone
->     },
->   },
-> };
-> ```
->
-> Users and devices without an entry keep the default color.
+![Two users with their own track colors](docs/images/map-colors.png)
+
+Per-user colors are already implemented in the upcoming official v3
+([owntracks/frontend#170](https://github.com/owntracks/frontend/issues/170)). Once v3 is
+released, please switch back to the official image. This fork will not be maintained
+beyond that, and it is not affiliated with or supported by the OwnTracks project, so
+please don't report issues with it upstream.
+
+### Usage
+
+Use `ghcr.io/taarraas/owntracks-frontend:latest` instead of `owntracks/frontend` (same
+environment variables and volumes), then add to your `config.js`:
+
+```js
+window.owntracks = window.owntracks || {};
+window.owntracks.config = {
+  map: {
+    colors: {
+      alice: "#2a9d8f", // all of alice's devices
+      "bob/phone": "#e06c4f", // only bob's phone
+    },
+  },
+};
+```
+
+Users and devices without an entry keep the default color.
+
+
+---
+
+The original README follows.
 
 ![Version](https://img.shields.io/github/package-json/v/owntracks/frontend)
 [![Docker Pulls](https://img.shields.io/docker/pulls/owntracks/frontend)](https://hub.docker.com/r/owntracks/frontend)
