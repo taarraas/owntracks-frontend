@@ -31,7 +31,6 @@ window.owntracks.config = {
 
 Users and devices without an entry keep the default color.
 
-
 ---
 
 The original README follows.
